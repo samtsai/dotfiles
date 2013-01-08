@@ -10,15 +10,12 @@ source $HOME/Dropbox/dotfiles/.prompt
 
 alias serv="python -m SimpleHTTPServer"
 
-# export EDITOR="subl"
+export EDITOR="subl -w"
 export EMAIL="tsaisa@ae.com"
-# set aliases
-# TODO break out aliases to separate file?
-alias la="ls -Gla"
-alias d="cd ~/Dropbox"
 
 alias sysup="brew update && brew upgrade && gem update"
 
+source ~/Dropbox/dotfiles/.aliases
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults
