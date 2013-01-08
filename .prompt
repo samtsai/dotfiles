@@ -1,0 +1,40 @@
+#!/bin/bash
+
+function relative_working_dir() {
+	[[ $PWD/ = "$HOME"/* ]] && echo "~${PWD#$HOME}" || echo "$PWD"
+}
+
+function build_prompt() {
+	RWD=$(relative_working_dir)
+	printf "${BBlue}[${BGreen} ${RWD} ${BBlue}]"
+	GIT_BRCH=$(git branch --no-color 2> /dev/null)
+
+	if [[ -n "$GIT_BRCH" ]]; then
+		GIT_BRCH=$(parse_git_branch)
+		GIT_DIRT=$(git_dirty_color)
+	fi
+
+	if [[ -n $GIT_BRCH ]]; then
+		printf "%$(($COLUMNS - 8 - ${#RWD} - ${#GIT_BRCH}))s"
+		printf "${GIT_DIRT}«${BYellow} ${GIT_BRCH} ${GIT_DIRT}»"
+	fi
+	printf "\n"
+}
+
+function git_dirty_color() {
+	if [[ -z $(git status -s 2> /dev/null) ]]; then
+		echo "$BRed"
+	else
+		echo "$BPurple"
+	fi
+}
+
+function parse_git_branch() {
+	echo "$GIT_BRCH" | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
+}
+
+# Standard prompt as just blue arrow
+# Keeping this out of prompt_command prevents weird delete issues
+PS1="\[$IPurple\]➜\[$Color_Off\] "
+# Define prompt via command
+PROMPT_COMMAND=build_prompt
