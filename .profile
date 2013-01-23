@@ -1,19 +1,16 @@
 #!/bin/bash
 
-export SKIP_AEO_WELCOME=1
 export PATH=/usr/local/bin:${PATH}:/usr/local/share/npm/bin
+
+# Settings
+export SKIP_AEO_WELCOME=1
+export EDITOR="subl -w"
+export EMAIL="tsaisa@ae.com"
 
 # Colorize the Terminal
 export CLICOLOR=1
 source $HOME/Dropbox/dotfiles/.color_vars
 source $HOME/Dropbox/dotfiles/.prompt
-
-alias serv="python -m SimpleHTTPServer"
-
-export EDITOR="subl -w"
-export EMAIL="tsaisa@ae.com"
-
-alias sysup="brew update && brew upgrade && gem update"
 
 source ~/Dropbox/dotfiles/.aliases
 # Add tab completion for `defaults read|write NSGlobalDomain`

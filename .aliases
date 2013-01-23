@@ -3,3 +3,9 @@ alias la="ls -Gla"
 
 # Directory Shortcuts
 alias d="cd ~/Dropbox"
+
+# Server Commands
+alias serv="python -m SimpleHTTPServer"
+
+# System Maintenance
+alias upsys="brew update && brew upgrade && gem update"

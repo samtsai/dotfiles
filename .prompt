@@ -22,7 +22,7 @@ function build_prompt() {
 }
 
 function git_dirty_color() {
-	if [[ -z $(git status -s 2> /dev/null) ]]; then
+	if [[ -n $(git status -s 2> /dev/null) ]]; then
 		echo "$BRed"
 	else
 		echo "$BPurple"
