@@ -1,0 +1,6 @@
+# Colorize the Terminal
+source $HOME/Dropbox/dotfiles/.color_vars
+source $HOME/Dropbox/dotfiles/.prompt
+
+# Set up aliases
+source $HOME/Dropbox/dotfiles/.aliases
