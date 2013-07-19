@@ -5,7 +5,7 @@ alias la="ls -Gla"
 alias d="cd ~/Dropbox"
 
 # Server Commands
-alias serv="python -m SimpleHTTPServer"
+# alias serv="python -m SimpleHTTPServer"
 
 # System Maintenance
-alias upsys="brew update && brew upgrade && gem update"
+# alias upsys="brew update && brew upgrade && gem update && npm up -g"
