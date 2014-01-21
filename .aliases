@@ -9,3 +9,5 @@ alias d="cd ~/Dropbox"
 
 # System Maintenance
 # alias upsys="brew update && brew upgrade && gem update && npm up -g"
+
+alias npml="npm ls -g --depth 0"
